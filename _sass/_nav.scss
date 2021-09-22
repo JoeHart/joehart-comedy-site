@@ -1,0 +1,17 @@
+.nav {
+  p{
+
+    @if $enhanced {
+        @include mq($from: gel-bp-s) {
+            display:inline-block;
+            float:right;
+            margin-left:4px
+        }
+                @include mq($from: gel-bp-m) {
+            display:block;
+            float:none;
+            margin-left: 0
+        }
+    }
+  }
+}

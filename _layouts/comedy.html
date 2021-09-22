@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+<body>
+  <div class="gel-wrap">
+    <div class="gel-layout  gel-layout--right page-header video-page">
+
+
+      {% include nav.html %}
+      <div class="gel-layout__item gel-4/5@l gel-2/3@m gel-1/1@s">
+        <div class="gel-layout gel-layout--rev">
+          <div class="gel-layout__item gel-1/2@l gel-1/1@m">
+            <h1 class="comedy-title">{{page.title}}</h1>
+            <p>{{content}}</p>
+          </div>
+          <div class="gel-layout__item gel-1/2@l gel-1/1@m gel">
+
+            <div class="homepage-item__media">
+              <img class="media-image" src="/{{page.promo-image}}" />
+              <p class="label">{{page.label}}</p>
+            </div>
+            {% for pressItem in page.press%}
+            <blockquote>
+              {% if pressItem.stars == "★★★★" or pressItem.stars == "★★★★★" %}
+              <h3 class="stars">{{pressItem.stars}}</h3>
+              {% endif %}
+              <p>"{{pressItem.quote}}"</p>
+              <footer>- <cite class="credit"><a href="{{pressItem.source}}">{{pressItem.credit}}</a></cite></footer>
+            </blockquote>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</body>
+
+</html>
